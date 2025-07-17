@@ -1,6 +1,7 @@
 package com.selenium;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.selenium.pages.loginPage;
 
 public class seleniumTest {
 
@@ -49,12 +52,20 @@ public class seleniumTest {
     
     @Test
     public void test(){
-        
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginPage lp = new loginPage(driver);
+        lp.saisirUsername("standard_user");
+        lp.saisirPassword("secret_sauce");
+        lp.clickButton();
         assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
     }
 
+    @Test
+    public void test1(){
+        loginPage lp = new loginPage(driver);
+        lp.saisirUsername("standard_user_wrong");
+        lp.saisirPassword("secret_sauce");
+        lp.clickButton();
+        assertTrue(lp.getErrorMessage().isDisplayed());
+    }
 
 }
