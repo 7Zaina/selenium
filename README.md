@@ -15,9 +15,7 @@
 1- créez une 2eme fonction diff, et ajoutez deux autres tests
 2- ajoutez des tags à vos tests, sauf le dernier
 3- lancez les tests avec les commandes mvn test -Dgroups=soustraction, mvn test -Dgroups=atypique, mvn test -Dgroups=typique, mvn test -Dtest=AppTest. combien de tests on été lancé à chaque fois?, remarquez la différence entre -Dgroups et -Dtest.
-################################################
-1- ajoutez la dependance de selenium:
- Ctrl+Shift+P => Maven: Add a dependency => saisissez "selenium-java" => selectionnez celle du package org.seleniumhq.selenium. vous devriez voir la dependance dans le fichier pom.xml
+
 
 
 
