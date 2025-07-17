@@ -27,3 +27,8 @@
   créez une variable browser et recuperez sa valeur depuis la ligne de commande comme ceci: System.getProperty("browser", "chrome"). chrome ici est une valeur par défaut.
 3- faite un switch/case pour instancier le navigateur adéquat
 4- lancez vos tests avec la commande mvn test -Dbrowser="firefox", vos tests se lanceront sur le navigateur firefox.
+######################################################
+1- créez un repertoire pages
+2- créez-y une nouvelle classe loginPage.java
+3- mettez-y wos webelements comme attributs, et les actions que l'on peut faire sur la page comme méthode.
+4- reecrivez vos tests pour faire appel au POM
