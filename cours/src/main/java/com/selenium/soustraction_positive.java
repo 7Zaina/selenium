@@ -9,4 +9,9 @@ public class soustraction_positive {
         }
         else return 0;
     }
+
+    public int diff(int a, int b)
+    {
+        return a-b;
+    }
 }
