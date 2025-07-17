@@ -3,17 +3,22 @@ package com.selenium.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class loginPage {
-    WebDriver driver;
-    WebElement username= driver.findElement(By.id("user-name"));
-    WebElement password= driver.findElement(By.id("password"));
-    WebElement loginBtn= driver.findElement(By.id("login-button"));
-    WebElement errorMessage= driver.findElement(By.cssSelector("[data-test='error']"));
+    @FindBy(id="user-name")
+    WebElement username;
+    @FindBy(id="password")
+    WebElement password;
+    @FindBy(id="login-button")
+    WebElement loginBtn;
+    @FindBy(css="[data-test='error']")
+    WebElement errorMessage;
 
     public loginPage(WebDriver driver)
     {
-        this.driver=driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void saisirUsername(String u)

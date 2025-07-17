@@ -32,3 +32,9 @@
 2- créez-y une nouvelle classe loginPage.java
 3- mettez-y wos webelements comme attributs, et les actions que l'on peut faire sur la page comme méthode.
 4- reecrivez vos tests pour faire appel au POM
+########################################################
+1- réecrivez la class POM avec l'annotation @FindBy() pour chaque web element
+2- modifiez le constructeur de la classe
+######################################################
+1- créez un test de base qui inclut les deux hooks, ceci permettera d'externalier les hooks des classes de tests
+2- héritez de ce test de base dans toutes vos classes de tests

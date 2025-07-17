@@ -15,44 +15,28 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.selenium.pages.loginPage;
 
-public class seleniumTest {
+public class seleniumTest extends baseTest{
+    private loginPage lp;
 
-    public WebDriver driver=null;
-
-    @BeforeEach
-    public void setup()
-    {
-        String browser=System.getProperty("browser", "chrome").toLowerCase();
-        switch (browser) {
-            case "edge":
-                driver=new EdgeDriver();
-                break;
-            case "firefox":
-                driver=new FirefoxDriver();
-                break;
-            case "chrome":
-                driver = new ChromeDriver();
-                break;
-            default:
-                driver = new ChromeDriver();
-                break;
-        }
+    @Override
+    protected void traitementInitial() {
+        lp = new loginPage(driver);
+    }
+    // @BeforeEach
+    // public void setup(){
+    //     super.setup();
+    //     driver.get("https://www.saucedemo.com/");
         
-        driver.get("https://www.saucedemo.com/");
-    }
+    // }
 
-    @AfterEach
-    public void tearDown(){
-        if(driver!=null)
-        {
-            driver.quit();
-            driver=null;
-        }
-    }
+    // @AfterEach
+    // public void tearDown()
+    // {
+    //     super.tearDown();
+    // }
     
     @Test
     public void test(){
-        loginPage lp = new loginPage(driver);
         lp.saisirUsername("standard_user");
         lp.saisirPassword("secret_sauce");
         lp.clickButton();
@@ -61,7 +45,7 @@ public class seleniumTest {
 
     @Test
     public void test1(){
-        loginPage lp = new loginPage(driver);
+        
         lp.saisirUsername("standard_user_wrong");
         lp.saisirPassword("secret_sauce");
         lp.clickButton();
