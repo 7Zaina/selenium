@@ -19,5 +19,11 @@
 1- supprimez les classes java et les anciens tests, ou créz un vouveau projet java
 2- ajoutez la dependance de selenium:
  Ctrl+Shift+P => Maven: Add a dependency => saisissez "selenium-java" => selectionnez celle du package org.seleniumhq.selenium. vous devriez voir la dependance dans le fichier pom.xml
- 3- créez une classe de test (la convention de nommage doit etre *Test.java, *Tests.java ou *TestCase.java), puis créez un premier test, et instanciez un web driver, recuperez vos web elements et faites une assertion junit.
- 4- lancez votre test via la commande mvn test
+3- créez une classe de test (la convention de nommage doit etre *Test.java, *Tests.java ou *TestCase.java), puis créez un premier test, et instanciez un web driver, recuperez vos web elements et faites une assertion junit.
+4- lancez votre test via la commande mvn test
+ ###################################################
+1- dans votre classe ajoutez deux hooks pour gerer votre navigateur, les hook sont annotée par @BeforeEach et @AfterEach, votre navigateur se fermera automatiquement apres chaque test.
+2- ajouter une variable d'environnement pour lancer vos tests sur différents navigateurs:
+  créez une variable browser et recuperez sa valeur depuis la ligne de commande comme ceci: System.getProperty("browser", "chrome"). chrome ici est une valeur par défaut.
+3- faite un switch/case pour instancier le navigateur adéquat
+4- lancez vos tests avec la commande mvn test -Dbrowser="firefox", vos tests se lanceront sur le navigateur firefox.
