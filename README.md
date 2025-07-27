@@ -11,7 +11,7 @@
 1- créez un repertoire data, et un ficher csv "jdd.csv", contenant vos jeux de données, pour notre test, il contiendra trois colonnes (a, b, r). les données represente ce que doit renvoyer le test.
 2- ajoutez les annotations nécessaires à votre test (remarquez que @Test à été remplacé par @ParameterizedTest)
 3- lancez les tests avec mvn test, vous devriez voir autant de test qu'il y a d'entrées dans votre JDD. (Tests run: 4, Failures: 0, Errors: 0, Skipped: 0)
-################################################
+# tags ################################################
 1- créez une 2eme fonction diff, et ajoutez deux autres tests
 2- ajoutez des tags à vos tests, sauf le dernier
 3- lancez les tests avec les commandes mvn test -Dgroups=soustraction, mvn test -Dgroups=atypique, mvn test -Dgroups=typique, mvn test -Dtest=AppTest. combien de tests on été lancé à chaque fois?, remarquez la différence entre -Dgroups et -Dtest.
